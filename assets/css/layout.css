@@ -1,0 +1,18 @@
+body{
+    text-align: center;
+}
+header, footer{
+    background-color: rgb(207, 245, 230);
+    padding: 2vh;
+    margin: 0;
+}
+header button{
+  float: right;  
+  background: white;
+  margin-left: 1vw;
+
+}
+footer{
+    position: relative;
+    margin-top: 50vh;
+}
