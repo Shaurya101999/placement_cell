@@ -1,3 +1,48 @@
-<header>
+<!-- <header>
+    <h3 style="float: left; display: inline;">Placements :)</h3>
+    <% if(locals.user) { %>
+        <div style="display: inline-block;">
+
+            <a href="/user/user-home"><button class="btn btn-primary">Home</button></a>
+            <a href="/user/sign-out"><button class="btn btn-primary">Sign Out</button></a>
+            <a href="/student/add-student"><button class="btn btn-primary">Add Student</button></a>
+            <a href="/companies/"><button class="btn btn-primary">Companies</button></a>
+            <a href="/info-download"><button class="btn btn-primary">Download Data</button></a>
+    
+        </div>
+    <% } %>
+    <br><br><br><br>
     HEADER
-</header>
+</header> -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <li class="nav-item me-5 m-2"><h5 style="display: inline; color: white;  padding: 4px;" >Placement Cell </h5></li>
+
+    <div class="container-fluid" >
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+
+            <ul class="navbar-nav nav nav-pills m-2 " style="display: right;">
+                <%if(locals.user){%>
+                        <li class="nav-item m-2"><h5 style="display: inline; color: white; border-top: 3px solid white; border-bottom: 3px solid white; padding: 4px;" >User: <%= locals.user.name %></h5></li>
+                        &nbsp;&nbsp;&nbsp;
+                        <br><br>
+                        <li style="margin-left: 90px;" class="nav-item me-2"><a class="btn btn-outline-info" aria-current="page" href="/user/user-home">Home</a></li>
+                        &nbsp;&nbsp;&nbsp;
+                        <li class="nav-item me-2"><a class="btn btn-outline-success" aria-current="page" href="/companies/">Companies</a></li>
+                        &nbsp;&nbsp;&nbsp;
+                        <li class="nav-item me-2">
+                            <a class="btn btn-outline-danger" aria-current="page" href="/info-download">
+                                Download All Info As CSV
+                            </a>
+                        </li>
+                        &nbsp;&nbsp;&nbsp;
+                        <li class="nav-item me-2"><a class="btn btn-outline-warning" aria-current="page" href="/user/sign-out">Sign Out</a></li>
+                        &nbsp;&nbsp;&nbsp;
+                <%}%>
+            </ul>
+        </div>
+    </div>
+</nav>
+

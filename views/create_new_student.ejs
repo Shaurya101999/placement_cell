@@ -1,0 +1,19 @@
+<h2>Add new student </h2>
+<form action="/student/create-student" method="post">
+    <input type="text" placeholder="Student Name" name="name"> <br>
+    <input type="email" name="email" id="" placeholder="Student's email"> <br>
+    <input type="text" name="batch" placeholder="Batch"><br>
+    <input type="text" name="college" placeholder="College"><br>
+    <input type="number" name="dsaScore" id="" placeholder="DSA Score"><br>
+    <input type="number" name="webDevScore" id="" placeholder="Web Development Score"><br>
+    <input type="number" name="reactScore" id="" placeholder="React Score"><br>
+    <br><br>
+    <h4>Placement Status</h4>
+    <select name="status" id="">
+        <option value="Placed">Placed</option>
+        <option value="Not Placed">Not Placed</option>
+    </select>
+    <br><br>
+    <button type="submit" class="btn btn-info">Add</button>
+</form>
+

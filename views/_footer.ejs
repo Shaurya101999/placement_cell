@@ -1,3 +1,21 @@
-<footer>
-    FOOTER
+<footer class="navbar navbar-dark bg-dark" style="color: white;">  
+    <h6 >Made By: Shaurya Varma </h6>
+    
+    <p >
+        <% if(!locals.user){%>
+        <a style="color: white;" href="/user/sign-in">SignIn</a>
+        &nbsp;&nbsp;&nbsp;
+        <a style="color: white;" href="/user/sign-up">SignUp</a>
+        &nbsp;&nbsp;&nbsp;
+        <%}%>
+        <%if(locals.user){%>
+            <a style="color: white;" href="/user/user-home">home</a>
+            &nbsp;&nbsp;&nbsp;
+            <a style="color: white;" href="/companies">Compony</a>
+            &nbsp;&nbsp;&nbsp;
+            <a style="color: white;" href="/info-download">ALL Information</a>
+            &nbsp;&nbsp;&nbsp;
+            <a style="color: white;" href="/user/sign-out">SignOut</a>
+        <%}%>
+    </p>
 </footer>

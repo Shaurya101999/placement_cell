@@ -1,0 +1,58 @@
+<!-- <%for(one_student of student){%>
+
+    <p><%= one_student.name %> =>
+    <ul>
+        <%for(company of one_student.interviews){%>
+            <li>
+                <%= company.company.name %> :
+                 <%= company.result %></p>
+            </li>
+        <%}%>
+    </ul>
+<%}%> -->
+<a href="/info-download/download"><button class="btn btn-outline-danger">Download All Data</button></a>
+<br><br>
+<table class="table table-hover ">
+        <tr>
+            <th>Name</th>
+            <th>Batch</th>
+            <th>Interviews</th>
+            
+        </tr>
+          <%for(one_student of student){%>
+        <tr >
+          
+
+            <td><%= one_student.name %> </td>
+            <td><%= one_student.batch %></td>
+            <td >
+                <%for(company of one_student.interviews){%>
+                    
+                    <table class="" style="margin: 0; padding: 0;">
+                        <tr>
+                            <td ><%= company.company.name %> : </td> <br>
+                            <td ><%= company.result %></td>    
+                    
+                        </tr>
+                    </table>                    
+                       
+                
+                <%}%>
+            </td>
+        
+        </tr>
+        <%}%>
+<!--         
+        <%for(std of student){%>
+        <tr>
+            <td><%= std.name %></td>
+            <td><%= std.batch%></td>
+            <td><%= std.college%></td>
+            <td><%= std.status%></td>
+            <td><%= std.dsaScore%></td>
+            <td><%= std.webDevScore%></td>
+            <td><%= std.reactScore%></td>
+        </tr>
+        <%}%> -->
+    </table>
+</section>

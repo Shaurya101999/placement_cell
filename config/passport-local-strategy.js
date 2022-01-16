@@ -15,7 +15,11 @@ passport.use(new LocalStrategy({
                 console.log('Invalid username/password');
                 return done(null, false);
             }
-            return done(null, user);
+            if(user && user.password == password){
+                // req.flash('success',`LogIn Successfully`);
+                return done(null,user);
+            }
+            return done(null,false);
         });
     }
 ));
@@ -34,5 +38,25 @@ passport.deserializeUser( function(id, done ){
         return done(null, user);
     });
 });
+
+// check if user is authenticated
+passport.checkAuthentication = function(req, res, next){
+    // if user is signed in pass him on next page 
+    if(req.isAuthenticated()){
+        return next();
+    }
+
+    // if user is not signed in 
+    return res.redirect('/user/sign-in');
+}
+
+passport.setAuthenticatedUser = function(req, res, next ){
+    if(req.isAuthenticated()){
+        // req.user contains current signed in user from session cookie
+        res.locals.user = req.user ;
+    }
+    next();
+}
+
 
 module.exports = passport ;

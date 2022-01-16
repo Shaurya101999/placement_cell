@@ -1,0 +1,51 @@
+<h3></h3> 
+<link rel="stylesheet" href="css/results.css">
+<div class="row gx-5">
+    <div class="col">
+        <h2>Add new Company</h2>
+        <form action="/companies/add-company" method="post">
+            <div class="mb-3">
+                <label for="name" class="form-label">Company Name</label>
+                <input type="text" name="name" required placeholder="Company Name" class="form-control" id="name">
+            </div>
+            <div class="mb-3">
+                <label for="date" class="form-label">Date</label>
+                <input type="date" name="date" required class="form-control" id="date">
+            </div>
+            <br><br>
+            <section>
+                <h4>Select students to assign to Company</h4>
+                <ul class="list-group">
+                    <% for (student of students) {%>
+                        <li class="list-group-item">
+                        <div class="form-check">
+                        <input class="form-check-input me-1" type="checkbox" name="studentsApplied" id=<%= student._id %> value=<%= student._id %> >
+                        <label for=<%= student._id %> class="form-check-label" >
+                            <%= student.name %> : Batch-<%=student.batch%> <br> Email-<%= student.email %>
+                        </label>
+                        </div>
+                        </li>
+                    <%}%>
+                </ul>
+                <br>
+                <button type="submit" class="btn btn-outline-info">Submit</button>
+            </section>
+            
+        </form>
+    </div>
+    <div class="col">
+        <div class="p-3 border bg-light">
+            <aside>
+                <h2>List of Companies</h2>
+                <!-- <ul class="list"> -->
+                    <%for(company of companies){%>
+                        <br>
+                        <a class="btn btn-outline-warning" href="/companies/result/<%= company._id %>"><%= company.name %></a>                    
+                        <br>
+                    <%}%>
+                
+                <!-- </ul> -->
+            </aside>
+        </div>
+      </div>
+</div>

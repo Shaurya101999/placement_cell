@@ -1,3 +1,29 @@
-<h1> Hi 
-
-    you are logged in :) </h1>
+<h4> Hi 
+<%= user.name %>
+    you are logged in :D </h4>
+<br>
+<h2>Students List </h2>
+<section class="table">
+    <table class="table table-hover">
+        <tr>
+            <th>Name</th>
+            <th>Batch</th>
+            <th>College</th>
+            <th>Placement Status</th>
+            <th>DSA score</th>
+            <th>WebDev Score</th>
+            <th>React Score</th>
+          </tr>
+        <%for(std of student){%>
+        <tr>
+            <td><%= std.name %></td>
+            <td><%= std.batch%></td>
+            <td><%= std.college%></td>
+            <td><%= std.status%></td>
+            <td><%= std.dsaScore%></td>
+            <td><%= std.webDevScore%></td>
+            <td><%= std.reactScore%></td>
+        </tr>
+        <%}%>
+    </table>
+</section>

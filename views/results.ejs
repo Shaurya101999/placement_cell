@@ -1,0 +1,28 @@
+<link rel="stylesheet" href="/css/results.css">
+<h2><%= company.name %></h2>
+<h4>Date of Interview : <%= company.date %></h4>
+
+<!-- <% let dummy = 'on-hold' %> -->
+<form action="/companies/add-result/<%= company.id %>" method="post">
+    <ul>
+        <% for(student of company.studentsApplied){ %>
+            <li>
+                <label class="form-label" for="<%= student._id %>">Update result for : <%= student.name %></label>
+                <select class="form-select" name="<%= student._id %>" id="<%= student._id %>">
+                    <%for(inter of student.interviews){%>
+                        <%if(inter.company.toString() === company.id ){ %>
+                            <% dummy = inter.result%>
+                        <%}%>
+                    <%}%>
+                    <option value="Pass"   <% if( dummy == 'Pass')   {%> selected <%}%>     >Pass</option>
+                    <option value="Fail"   <% if( dummy == 'Fail')   {%> selected <%}%>     >Fail</option>
+                    <option value="On-Hold" <% if( dummy == 'On-Hold') {%> selected <%}%>   >On Hold</option>
+                    <option value="Absent" <% if( dummy == 'Absent') {%> selected <%}%>   >Absent</option>
+                </select>
+                <br><br>
+            </li>
+        <% } %>
+    </ul>
+    
+    <button type="submit"  class="btn btn-outline-info">Submit</button>
+</form>
