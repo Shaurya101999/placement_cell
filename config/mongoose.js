@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const env = require('./enviroment');
-// const dburl = env.db || 'mongodb://localhost/ecommerce_development'
-const dburl = `mongodb://localhost/${env.db}`;
+const dburl = env.db ;
+// const dburl = `mongodb://localhost/${env.db}`;
 mongoose.connect(dburl);
 
 
