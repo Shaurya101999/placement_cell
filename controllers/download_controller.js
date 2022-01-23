@@ -44,7 +44,7 @@ module.exports.download = function(req, res){
 
             for(students of i.interviews){
                 dummy[comp+count]= students.company.name;
-                dummy[comp+count+'result']= i.result;
+                dummy[comp+count+'result']= students.result;
                 count++ ;
             }
             final.push(dummy);

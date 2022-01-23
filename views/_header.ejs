@@ -25,10 +25,13 @@
 
             <ul class="navbar-nav nav nav-pills m-2 " style="display: right;">
                 <%if(locals.user){%>
-                        <li class="nav-item m-2"><h5 style="display: inline; color: white; border-top: 3px solid white; border-bottom: 3px solid white; padding: 4px;" >User: <%= locals.user.name %></h5></li>
+                        <li class="nav-item m-2"><h5 style="display: inline; color: white;  border-bottom: 3px solid white; padding: 4px;" >Hi, <%= locals.user.name %></h5></li>
                         &nbsp;&nbsp;&nbsp;
                         <br><br>
+                        
                         <li style="margin-left: 90px;" class="nav-item me-2"><a class="btn btn-outline-info" aria-current="page" href="/user/user-home">Home</a></li>
+                        &nbsp;&nbsp;&nbsp;
+                        <li class="nav-item me-2"><a class="btn btn-outline-primary" aria-current="page" href="/student/add-student">Add Student</a></li>
                         &nbsp;&nbsp;&nbsp;
                         <li class="nav-item me-2"><a class="btn btn-outline-success" aria-current="page" href="/companies/">Companies</a></li>
                         &nbsp;&nbsp;&nbsp;

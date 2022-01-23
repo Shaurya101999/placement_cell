@@ -1,3 +1,4 @@
+// render homae page for not signed in users
 module.exports.home = function(req, res ){
     // console.log(req.cookies);
     if(req.isAuthenticated()){

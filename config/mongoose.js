@@ -1,13 +1,16 @@
 const mongoose = require('mongoose');
+const env = require('./enviroment');
+// const dburl = env.db || 'mongodb://localhost/ecommerce_development'
+const dburl = `mongodb://localhost/${env.db}`;
+mongoose.connect(dburl);
 
-mongoose.connect('mongodb://localhost/placement_cell_development');
 
 const db = mongoose.connection;
 
 db.on('error', console.error.bind(console, 'Error in connecting to db '));
 
 db.once('open', function(){
-    console.log(' Connected to MongoDB')
+    console.log(`Connected to MongoDB : ${env.db}`)
 });
 
 module.exports = db ;

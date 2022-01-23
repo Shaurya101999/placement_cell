@@ -15,6 +15,7 @@ module.exports.home = function(req, res){
 module.exports.addCompany = function(req, res){
     Company.create(req.body, function(err, company){
         if(err){ 
+            req.flash('error','Error in creating Company')
             console.log('Error in creating company ', err); 
             return res.redirect('back');
         }
@@ -30,6 +31,7 @@ module.exports.addCompany = function(req, res){
                 student.save();
             })
         }
+        req.flash('success',`Interview for ${company.name} created`)
         return res.redirect('back');
     })
 }
@@ -77,7 +79,10 @@ module.exports.addResults = function( req, res){
             }
         })
     }    
-    return res.render('user-home',{
-        title : 'User Home'
-    })
+    req.flash('success','Results updated')
+    return res.redirect('/user/user-home');
+
+    // return res.render('user_home',{
+    //     title : 'User Home'
+    // })
 }
