@@ -15,6 +15,7 @@
 <table class="table table-hover ">
         <tr>
             <th>Name</th>
+            <th>Email</th>
             <th>Batch</th>
             <th>Interviews</th>
             
@@ -24,6 +25,7 @@
           
 
             <td><%= one_student.name %> </td>
+            <td><%= one_student.email %> </td>
             <td><%= one_student.batch %></td>
             <td >
                 <%for(company of one_student.interviews){%>

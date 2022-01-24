@@ -1,12 +1,13 @@
-<footer class="navbar navbar-dark bg-dark" style="color: white;">  
+<footer class="bg-dark text-center text-white" style="color: white; margin-bottom: 0;">  
     <h6 >Made By: Shaurya Varma </h6>
     
     <p >
         <% if(!locals.user){%>
-        <a style="color: white;" href="/user/sign-in">SignIn</a>
-        &nbsp;&nbsp;&nbsp;
-        <a style="color: white;" href="/user/sign-up">SignUp</a>
-        &nbsp;&nbsp;&nbsp;
+            <a style="color: white;" href="/user/sign-in">Sign In</a>
+            &nbsp;&nbsp;&nbsp;
+            <a style="color: white;" href="/user/sign-up">Sign Up</a>
+            &nbsp;&nbsp;&nbsp;
+            <a  style="color: white;" href="/">Home</a>
         <%}%>
         <%if(locals.user){%>
             <a style="color: white;" href="/user/user-home">Home</a>

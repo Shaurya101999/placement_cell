@@ -5,6 +5,9 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
+        <!-- app logo in title from google -->
+        <link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmVAP6fCVhcp1_MnPe34uC2V5OtTdT8azugw&usqp=CAU" sizes="16x16" type="image/png">
+
         <title>
             <%= title %>
         </title>
@@ -31,7 +34,7 @@
         <%- body %>
 
         <%- include('_footer') %>
-        <br><br>
+       
         <%- script %>
         <script>
             <% if(flash.success && flash.success.length >0) { %>

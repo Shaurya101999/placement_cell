@@ -4,6 +4,7 @@
     <table class="table table-hover">
         <tr>
             <th>Name</th>
+            <th>Email</th>
             <th>Batch</th>
             <th>College</th>
             <th>Placement Status</th>
@@ -14,6 +15,7 @@
         <%for(std of student){%>
         <tr>
             <td><%= std.name %></td>
+            <td><%= std.email %></td>
             <td><%= std.batch%></td>
             <td><%= std.college%></td>
             <td><%= std.status%></td>

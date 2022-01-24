@@ -10,19 +10,15 @@ module.exports.addStudentPage = function(req, res ){
 // create new student and store in db
 module.exports.createStudent = function(req, res ){
     console.log(req.body);
-    Student.create(req.body , function(err, student){
-        console.log(student);
-        if(err){ 
-            console.log('Error occured while adding Student : ',err); 
-            req.flash('error', 'Email already exists');
-            // return;
-        
+    Student.create(req.body,(err,student)=>{ //creates new student in database
+        if(err){ // throws error if email alredy exists in database
+            console.log('error occured while creating new Student');
+            req.flash('error',`${req.body.email} already exists`);
+            return res.redirect('back');
         }
-        
-        console.log(student);
-        req.flash('success', `Student created`)
-        
-       
+        // console.log(student);      
+        req.flash('success',`Student ${student.name} created Successfully`);
+        return res.redirect('back');
     });
-    return res.redirect('/user/user-home');
+   
 }
